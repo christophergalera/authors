@@ -52,7 +52,7 @@ const AllAuthors= (props) => {
                                 <p>{author.name}</p>
                             </td>
                             <td>
-                                <button className="editBtn" onClick={() => navigate('/authors/' + author._id + '/edit')}>Edit</button>
+                                <button className="editBtn" onClick={() => navigate('/edit/' + author._id )}>Edit</button>
                                 <button className="deleteBtn" onClick={() => deleteAuthor(author._id)}>Delete</button>
                             </td>
                         </tr>

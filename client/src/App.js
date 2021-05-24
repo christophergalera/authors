@@ -11,7 +11,7 @@ function App() {
       <Router>
         <AllAuthors path="/"/>
         <NewAuthor path="/author/new"/>
-        <EditAuthor path ="/authors/:id/edit"/>
+        <EditAuthor path ="/edit/:id/"/>
       </Router>
     </div>
   );
