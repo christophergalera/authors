@@ -8,7 +8,7 @@ const AllAuthors= (props) => {
 
     useEffect(() => {
     // axios call the route for getAll
-    axios.get('http://localhost:8000/api/productmanager/')
+    axios.get('http://localhost:8000/api/author/')
         .then((res) => {
             console.log(res.data);  // this is the body that we see in postman's results
             setAllAuthors(res.data);
@@ -37,19 +37,19 @@ const AllAuthors= (props) => {
     return (
         <div>
             <Header/>
-            <Link to={'/authors/new'}>Add an author</Link>
+            <Link to={'/author/new'}>Add an author</Link>
             <h3>We have quotes by: </h3>
             <table>
                 <thead>
-                <th>Author</th>
-                <th>Actions Available</th>
+                    <th>Author</th>
+                    <th>Actions Available</th>
                 </thead>
                 <tbody>
                 {
                     allAuthors.map(( author, index ) => (
                         <tr>
                             <td>
-                                <Link to={ "/authors/" + author._id }>{ author.title }</Link>
+                                <p>{author.name}</p>
                             </td>
                             <td>
                                 <button className="editBtn" onClick={() => navigate('/authors/' + author._id + '/edit')}>Edit</button>

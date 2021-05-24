@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, navigate } from '@reach/router';
-import Header from './header'
 
 const AuthorForm = (props) => {
     const { submitHandler, errors, author, setAuthor, buttonLabel} = props;
@@ -38,7 +37,7 @@ const AuthorForm = (props) => {
                 />
             </div>
             <button>{buttonLabel}</button>
-            <button className= "cancelBtn" onClick={() => navigate(-1)}> Cancel </button>
+            <button className= "cancelBtn" onClick={() => navigate("/")}> Cancel </button>
         </form>
         </div>
     )

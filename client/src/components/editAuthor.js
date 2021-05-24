@@ -9,7 +9,7 @@ const EditAuthor = (props) => {
     const { id } = props;
 
     const [ editAuthor, setEditAuthor ] = useState({
-        title: "",
+        name: "",
     });
 
   const [ errors, setErrors ] = useState({});
@@ -41,23 +41,11 @@ const EditAuthor = (props) => {
       })
   }
 
-  const deleteAuthor = () => {
-    axios.delete('http://localhost:8000/api/author/' + id)
-      .then((res) => {
-        console.log(res.data);
-        navigate('/');
-      })
-      .catch((err) => {
-        console.log(err);
-        navigate('/');
-      })
-  }
- 
   return (
     <div>
         <Header/>
         <Link to={'/'}>Home</Link>
-        <h3>Edit This Author</h3>
+        <h3>Edit This Author:</h3>
         <AuthorForm 
             submitHandler={ submitHandler } 
             errors={ errors } 
@@ -65,7 +53,6 @@ const EditAuthor = (props) => {
             setAuthor={ setEditAuthor }
             buttonLabel={"Submit"}
             />
-        <button className="deleteBtn" onClick={ deleteAuthor }>Delete Author </button>
         </div>
     )
 }

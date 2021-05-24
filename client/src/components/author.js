@@ -1,16 +1,16 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
-import {link, navigate} from '@reach/router';
-import AllAuthors from './allAuthors'
+import {Link, navigate} from '@reach/router';
 import AuthorForm from './authorForm'
+import Header from './header'
 
 const NewAuthor = (props) => {
     const [ newAuthor, setNewAuthor] = useState({
-        name: ""
+        name: "",
     })
 
 
-  const [ errors, setErrors] = useState({})
+    const [ errors, setErrors] = useState({})
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -29,14 +29,17 @@ const NewAuthor = (props) => {
 
     return ( 
         <div>
-            <h1>Favorite Authors</h1> 
+            <div class= "header">
+                <Header/>
+                <Link to={'/'}> home  </Link>
+            </div>
+            <h3>Add a new Author:</h3>
             <AuthorForm 
                 submitHandler={ submitHandler } 
                 errors= { errors } 
                 author={ newAuthor } 
                 setAuthor = { setNewAuthor }
                 buttonLabel= {"Submit"} />
-            <AllAuthors/>
         </div>
     )
 }
