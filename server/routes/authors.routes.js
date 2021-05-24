@@ -1,4 +1,4 @@
-const AuthorsController = require ('../controllers/author.controller');
+const AuthorsController = require ('../controllers/authors.controller');
 
 
 module.exports = function(app) {
@@ -8,3 +8,5 @@ module.exports = function(app) {
     app.put('/api/author/:id', AuthorsController.update)
     app.delete('/api/author/:id', AuthorsController.delete)
 };
+
+//

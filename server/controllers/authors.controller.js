@@ -1,4 +1,4 @@
-const authors = require ('../models/authors.model');
+const Author = require ('../models/authors.model');
 
 module.exports = { 
     create: (req, res) => {
